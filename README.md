@@ -1,0 +1,1 @@
+# auto-startstop-aws-resources
