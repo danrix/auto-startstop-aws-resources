@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Metadata:
+  License: Apache-2.0
+Description: Description
+Resources:
+  RDSSSUser:
+    Type: 'AWS::IAM::User'
+    Properties:
+      Policies:
+        - PolicyName: !Ref RDSSSPolicy
+  RDSSSPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: rds_StartStop_instance
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Action:
+          - rds:stopDBInstance
+          - rds:startDBInstance
+          Resource: arn:aws:rds:us-west-2:**********:db:instance_name      
