@@ -1,0 +1,9 @@
+Type: AWS::Events::Rule
+Properties: 
+  Description: Stops an RDS instance every Friday and Monday at 5:30 pm PST. Instance name is passed to Lambda function in a json payload
+  Name: stop_RDSInstance_MF_1730_PST
+  RoleArn: String
+  ScheduleExpression: 30 12 ? * MON,FRI *
+  State: ENABLED
+  Targets: 
+    - Target
